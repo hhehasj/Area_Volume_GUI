@@ -18,8 +18,8 @@ def main():
     screen_height = root.winfo_screenheight()  # Gets height of the screen
 
     # Gets the center point
-    center_x = int(screen_width/2 - 1000/2)
-    center_y = int(screen_height/2 - 500/2)
+    center_x = int(screen_width/2 - 600/2)
+    center_y = int(screen_height/2 - 350/2)
 
     root.geometry(f"600x350+{center_x}+{center_y}")
 
