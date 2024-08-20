@@ -12,6 +12,7 @@ def main():
     # START
     root = Tk()
     root.title("Trial")
+    root.resizable(False, False)
 
     # WINDOW DIMENTSIONS
     screen_width = root.winfo_screenwidth()  # Gets width of the screen
@@ -27,11 +28,11 @@ def main():
     text1 = ttk.Label(root, text="CHOOSE:", font=("Arial", 25))
     text1.place(x=300, y=25, anchor=CENTER)
 
-    area_button = ttk.Button(root, text="AREA", width=10, command=lambda: [Area_Window(root), hide_window(root)])
-    area_button.place(x=150, y=150, anchor=CENTER)
+    area_button = ttk.Button(root, text="AREA", width=10, command=lambda: [Area_Window(main_window=root), hide_window(root)])
+    area_button.place(x=150, y=150, anchor=CENTER, width=75, height=50)
 
-    volume_button = ttk.Button(root, text="VOLUME", width=10, command=lambda: [Volume_Window(root), hide_window(root)])
-    volume_button.place(x=450, y=150, anchor=CENTER)
+    volume_button = ttk.Button(root, text="VOLUME", width=10, command=lambda: [Volume_Window(main_window=root), hide_window(root)])
+    volume_button.place(x=450, y=150, anchor=CENTER, width=75, height=50)
     # END
     root.mainloop()
 
