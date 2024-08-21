@@ -4,19 +4,6 @@ from PIL import Image, ImageTk
 from widgets_of_frame import shape_widgets
 
 
-# widgets_visible = True
-#
-# def toggle_widgets(frame):
-#     global widgets_visible
-#
-#     if widgets_visible:
-#         frame.place_forget()
-#         widgets_visible = False
-#     else:
-#         widgets_visible = True
-#         frame.place(x=300, y=220, anchor="center")
-
-
 def show_main_window(self):
     self.deiconify()
 
