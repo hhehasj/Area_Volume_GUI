@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-from widgets_of_frame import shape_widgets
+from widgets_of_frame import shape_widgets_volume
 
 
 def show_main_window(self):
@@ -42,12 +42,11 @@ def Volume_Window(main_window):
     # this gets the chosen shape from the combobox
     def entries(event):
         selected_shape = shape_variable.get()
-        print(selected_shape)
 
         entry_frame = ttk.Frame(volume_window, width=300, height=200, relief=SUNKEN)
         entry_frame.place(x=300, y=220, anchor="center")
 
-        shape_widgets(frame=entry_frame, shape=selected_shape)
+        shape_widgets_volume(frame=entry_frame, shape=selected_shape)
 
     shape_combobox.bind("<<ComboboxSelected>>", entries)
 

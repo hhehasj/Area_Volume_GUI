@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-import time
+from widgets_of_frame import shape_widgets_area
 
 
 def show_main_window(self):
@@ -39,7 +39,12 @@ def Area_Window(main_window):
     shape_combobox.place(x=300, y=100, anchor="center")
 
     # END
-    def get_value(event):
-        selected_variable = shape_combobox.get()
+    def entries(event):
+        selected_shape = shape_combobox.get()
 
-    shape_combobox.bind("<<ComboboxSelected>>", get_value)
+        entry_frame = ttk.Frame(area_window, width=300, height=200, relief=SUNKEN)
+        entry_frame.place(x=300, y=220, anchor="center")
+
+        shape_widgets_area(entry_frame, selected_shape)
+
+    shape_combobox.bind("<<ComboboxSelected>>", entries)
