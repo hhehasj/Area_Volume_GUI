@@ -23,7 +23,7 @@ def Volume_Window(main_window):
     volume_window.geometry(f"600x350+{center_x}+{center_y}")
 
     # icon
-    image = Image.open("./icons/arrow_back_1.png")
+    image = Image.open("./icons_and_photo/arrow_back_1.png")
     image = image.resize((25, 25), Image.Resampling.LANCZOS)
     photo = ImageTk.PhotoImage(image)
     volume_window.photo = photo
@@ -43,7 +43,7 @@ def Volume_Window(main_window):
     def entries(event):
         selected_shape = shape_variable.get()
 
-        entry_frame = ttk.Frame(volume_window, width=300, height=200, relief=SUNKEN)
+        entry_frame = ttk.Frame(volume_window, width=300, height=200)
         entry_frame.place(x=300, y=220, anchor="center")
 
         shape_widgets_volume(frame=entry_frame, shape=selected_shape)
