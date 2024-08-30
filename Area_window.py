@@ -33,18 +33,21 @@ def Area_Window(main_window):
     exit_button.place(x=10, y=10, anchor="nw")
 
     shape_variable = StringVar()
-    shape_combobox = ttk.Combobox(area_window, textvariable=shape_variable)  # Combobox widget
+    shape_combobox = ttk.Combobox(area_window, textvariable=shape_variable, font="Arial 12 bold")  # Combobox widget
     shape_combobox["values"] = ("Circle", "Square", "Rectangle", "Triangle", "Oval", "Semicircle")
     shape_combobox["state"] = "readonly"
     shape_combobox.place(x=300, y=100, anchor="center")
 
-    # END
     def entries(event):
         selected_shape = shape_combobox.get()
 
-        entry_frame = ttk.Frame(area_window, width=300, height=200)
-        entry_frame.place(x=300, y=220, anchor="center")
+        entry_frame = ttk.Frame(area_window, width=600, height=200)
+        entry_frame.place(relx=0.5, rely=0.65, anchor="center")
 
         shape_widgets_area(entry_frame, selected_shape)
-
     shape_combobox.bind("<<ComboboxSelected>>", entries)
+
+    # END
+    style = ttk.Style()
+    style.configure("TCombobox")
+

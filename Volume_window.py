@@ -34,7 +34,7 @@ def Volume_Window(main_window):
     exit_button.place(x=10, y=10, anchor="nw")
 
     shape_variable = StringVar()
-    shape_combobox = ttk.Combobox(volume_window, textvariable=shape_variable)  # Combobox widget
+    shape_combobox = ttk.Combobox(volume_window, textvariable=shape_variable, font="Arial 12 bold")  # Combobox widget
     shape_combobox["values"] = ("Sphere", "Cube", "Cuboid", "Cylinder", "Cone", "Triangular Prism", "Triangular Pyramid", "Pyramid", "Hemisphere")
     shape_combobox["state"] = "readonly"
     shape_combobox.place(x=300, y=100, anchor="center")
@@ -43,8 +43,8 @@ def Volume_Window(main_window):
     def entries(event):
         selected_shape = shape_variable.get()
 
-        entry_frame = ttk.Frame(volume_window, width=300, height=200)
-        entry_frame.place(x=300, y=220, anchor="center")
+        entry_frame = ttk.Frame(volume_window, width=600, height=200)
+        entry_frame.place(relx=0.5, rely=0.65, anchor="center")
 
         shape_widgets_volume(frame=entry_frame, shape=selected_shape)
 
